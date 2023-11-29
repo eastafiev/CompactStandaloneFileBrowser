@@ -1,5 +1,5 @@
 {
-  "name": "my-awesome-package",
+  "name": "CompactStandaloneFileBrowsere",
   "version": "1.0.0",
   "description": "Windows Desctop Vista style File explorer",
   "author": "eastafiev",
@@ -12,7 +12,7 @@
   
   "assets": {
 
-  "MyAwesomePackage": "Assets/StandaloneFileBrowser"
+  "CompactStandaloneFileBrowser": "Assets/StandaloneFileBrowser"
 
   }
 }
