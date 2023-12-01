@@ -1,5 +1,6 @@
 {
-  "name": "com.eastafiev.CompactStandaloneFileBrowser",
+  "name": "com.eastafiev.сompactі_standalone_file_browser",
+  "displayName": "CompactStandaloneFileBrowser",
   "version": "0.5.0",
   "description": "Windows Desctop Vista style File explorer",
   "author": "Eugene Astafiev",
