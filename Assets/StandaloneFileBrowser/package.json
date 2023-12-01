@@ -1,15 +1,9 @@
 {
-  "name": com.eastafiev.CompactStandaloneFileBrowser,
+  "name": "com.eastafiev.CompactStandaloneFileBrowser",
   "version": "0.5.0",
   "description": "Windows Desctop Vista style File explorer",
   "author": "Eugene Astafiev",
   "keywords": ["unity","windows" "decktop", "file", "explorer", "browser"],
   "license": "MIT",
   "dependencies": {},
-    
-  "assets": {
-
-  "CompactStandaloneFileBrowser": "/Assets/StandaloneFileBrowser"
-
-  }
 }
