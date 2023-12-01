@@ -1,6 +1,5 @@
 {
-  "name": "CompactStandaloneFileBrowsere",
-  "displayName": "CompactStandaloneFileBrowsere",
+  "name": "CompactStandaloneFileBrowser",
   "version": "0.5.0",
   "description": "Windows Desctop Vista style File explorer",
   "author": "Eugene Astafiev",
@@ -10,7 +9,7 @@
     
   "assets": {
 
-  "CompactStandaloneFileBrowser": "?path=src/Assets/StandaloneFileBrowser"
+  "CompactStandaloneFileBrowser": "/Assets/StandaloneFileBrowser"
 
   }
 }
