@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeFileBrowsers", "NativeFileBrowsers.csproj", "{69bbe437-dd31-2abb-c17d-0f1b9ee6e002}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{c721d351-7cb2-310b-7d09-41061bb77bd3}"
 EndProject
 Global
@@ -8,6 +10,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69bbe437-dd31-2abb-c17d-0f1b9ee6e002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69bbe437-dd31-2abb-c17d-0f1b9ee6e002}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{c721d351-7cb2-310b-7d09-41061bb77bd3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{c721d351-7cb2-310b-7d09-41061bb77bd3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
