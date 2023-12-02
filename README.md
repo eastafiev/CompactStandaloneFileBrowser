@@ -1,8 +1,9 @@
-# Compact Standalone File Browser
-_Unity3d runtime Compact Vista style File Browser._  
-- Only Desktop Windows build supported.  
-- IL2CPP compatible. 
-- No additional plugins required.  
- - Save File dialog, Open file/files dialog, Select folder dialog.
+# Compact Standalone File Browser for Unity3d
+_A compact wrapper for native Windows file dialogs._  
+_Inspired by:_ https://github.com/gkngkc/UnityStandaloneFileBrowser   
+- Only Desktop Windows platform supported.
+- IL2CPP compatible.
+- No additional plugins required.
+- Save File dialog, Open file/files dialog, Select folder dialog.
 
-**INSTALL VIA URL:**  https://github.com/eastafiev/CompactStandaloneFileBrowser.git?path=Assets/StandaloneFileBrowser
+**INSTALL URL:**  https://github.com/eastafiev/CompactStandaloneFileBrowser.git?path=Assets/StandaloneFileBrowser
