@@ -42,9 +42,9 @@ namespace StandaloneFileBrowser
 			return filenames;
 		}
 
-		public void OpenFolderPanelAsync(string title,  Action<string[]> cb)
+		public void OpenFolderPanelAsync(string title,  Action<string[]> callback)
 		{
-			cb.Invoke(OpenFolderPanel(title));
+			callback.Invoke(OpenFolderPanel(title));
 		}
 
 

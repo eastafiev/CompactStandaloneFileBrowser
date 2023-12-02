@@ -14,9 +14,9 @@ namespace StandaloneFileBrowser
 		}
 	}
 
-	public class StandaloneFileBrowser
+	public static class StandaloneFileBrowser
 	{
-		static StandaloneFileBrowserWindows _standaloneFileBrowser;
+		private static readonly StandaloneFileBrowserWindows _standaloneFileBrowser;
 
 		static StandaloneFileBrowser()
 		{
@@ -38,10 +38,8 @@ namespace StandaloneFileBrowser
 
 		/// <summary>
 		/// Native open folder dialog
-		/// NOTE: Multiple folder selection doesn't supported on Windows
 		/// </summary>
 		/// <param name="title"></param>
-		/// <param name="multiselect"></param>
 		/// <returns>Returns array of chosen paths. Zero length array when cancelled</returns>
 		public static string[] OpenFolderPanel(string title)
 		{
@@ -50,7 +48,6 @@ namespace StandaloneFileBrowser
 
 		/// <summary>
 		/// Native open folder dialog async
-		/// NOTE: Multiple folder selection doesn't supported on Windows
 		/// </summary>
 		/// <param name="title"></param>
 		/// <param name="cb">Callback")</param>
@@ -96,14 +93,14 @@ namespace StandaloneFileBrowser
 		/// <param name="filterName">filter name</param>
 		/// <param name="extension">File extension</param>
 		/// <param name="cb">Callback")</param>
-		public static void SaveFilePanelAsync(string title, string directory, string defaultName, string filterName,
+		public static void SaveFilePanelAsync(string title, string defaultName, string filterName,
 			string extension,
 			Action<string> cb)
 		{
 			var extensions = string.IsNullOrEmpty(extension)
 				? null
 				: new[] { new ExtensionFilter(filterName, extension) };
-			SaveFilePanelAsync(title, directory, defaultName, extensions, cb);
+			SaveFilePanelAsync(title, defaultName, extensions, cb);
 		}
 
 		/// <summary>
@@ -113,7 +110,7 @@ namespace StandaloneFileBrowser
 		/// <param name="defaultName">Default file name</param>
 		/// <param name="extensions">List of extension filters. Filter Example: new ExtensionFilter("Image Files", "jpg", "png")</param>
 		/// <param name="cb">Callback")</param>
-		public static void SaveFilePanelAsync(string title, string directory, string defaultName,
+		public static void SaveFilePanelAsync(string title, string defaultName,
 			ExtensionFilter[] extensions, Action<string> cb)
 		{
 			_standaloneFileBrowser.SaveFilePanelAsync(title, defaultName, extensions, cb);

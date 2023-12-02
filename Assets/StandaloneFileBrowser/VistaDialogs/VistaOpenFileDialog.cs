@@ -2,7 +2,7 @@
 
 namespace StandaloneFileBrowser
 {
-	public class VistaOpenFileDialog : VistaFileDialog
+	public sealed class VistaOpenFileDialog : VistaFileDialog
 	{
 		private bool _showReadOnly;
 		private bool _readOnlyChecked;
@@ -14,9 +14,6 @@ namespace StandaloneFileBrowser
 			set { SetOption(FOS.FOS_ALLOWMULTISELECT, value); }
 		}
 
-		/// <summary>
-		/// Creates a new instance of the <see cref="VistaFolderBrowserDialog" /> class.
-		/// </summary>
 		public VistaOpenFileDialog()
 		{
 			Reset();
@@ -32,10 +29,8 @@ namespace StandaloneFileBrowser
 		{
 			if (Multiselect)
 			{
-				IShellItemArray ppenum;
-				((IFileOpenDialog)dialog).GetResults(out ppenum);
-				uint pdwNumItems;
-				ppenum.GetCount(out pdwNumItems);
+				((IFileOpenDialog)dialog).GetResults(out var ppenum);
+				ppenum.GetCount(out var pdwNumItems);
 				string[] strArray = new string[(int)pdwNumItems];
 				for (uint dwIndex = 0; dwIndex < pdwNumItems; ++dwIndex)
 				{

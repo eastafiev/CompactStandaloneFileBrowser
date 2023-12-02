@@ -23,27 +23,13 @@ namespace StandaloneFileBrowser
 
 		[Description(
 			"A value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.")]
-		[Category("Behavior")]
-		[DefaultValue(true)]
 		public bool AddExtension
 		{
 			get => _addExtension;
 			set { _addExtension = value; }
 		}
 
-		// [Description(
-		// 	"A value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.")]
-		// [DefaultValue(true)]
-		// [Category("Behavior")]
-		// public bool CheckPathExists
-		// {
-		// 	get => GetOption(FOS.FOS_PATHMUSTEXIST);
-		// 	set { SetOption(FOS.FOS_PATHMUSTEXIST, value); }
-		// }
-
 		[Description("The file dialog box title.")]
-		[Category("Appearance")]
-		[DefaultValue("")]
 		[Localizable(true)]
 		public string Title
 		{
@@ -61,7 +47,7 @@ namespace StandaloneFileBrowser
 			get => _filter;
 			set
 			{
-				if (value != this._filter)
+				if (value != _filter)
 				{
 					if (!string.IsNullOrEmpty(value))
 					{
@@ -72,22 +58,18 @@ namespace StandaloneFileBrowser
 					else
 						value = (string)null;
 
-					this._filter = value;
+					_filter = value;
 				}
 			}
 		}
 
 		[Description("The index of the filter currently selected in the file dialog box.")]
-		[Category("Behavior")]
-		[DefaultValue(1)]
 		public int FilterIndex
 		{
 			get => _filterIndex;
 			set { _filterIndex = value; }
 		}
 
-		[DefaultValue("")]
-		[Category("Data")]
 		[Description("A string containing the file name selected in the file dialog box.")]
 		public string FileName
 		{
@@ -105,8 +87,6 @@ namespace StandaloneFileBrowser
 			}
 		}
 
-		[Category("Behavior")]
-		[DefaultValue("")]
 		[Description("The default file name extension.")]
 		public string DefaultExt
 		{
@@ -126,8 +106,6 @@ namespace StandaloneFileBrowser
 		}
 
 		[Description("The file names of all selected files in the dialog box.")]
-		[Browsable(false)]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public string[] FileNames => FileNamesInternal;
 
 		internal string[] FileNamesInternal
@@ -142,7 +120,6 @@ namespace StandaloneFileBrowser
 		/// <summary>
 		/// Displays the folder browser dialog.
 		/// </summary>
-		/// <param name="owner">Handle to the window that owns the dialog.</param>
 		/// <returns>If the user clicks the OK button, <see langword="true" /> is returned; otherwise, <see langword="false" />.</returns>
 		public bool? ShowDialog()
 		{
@@ -182,7 +159,7 @@ namespace StandaloneFileBrowser
 			}
 		}
 
-		internal bool GetOption(FOS option) => (this._options & option) > (FOS)0;
+		internal bool GetOption(FOS option) => (_options & option) > (FOS)0;
 
 		internal void SetOption(FOS option, bool value)
 		{
@@ -194,20 +171,19 @@ namespace StandaloneFileBrowser
 
 		internal virtual void GetResult(IFileDialog dialog)
 		{
-			if (this.GetOption(FOS.FOS_ALLOWMULTISELECT))
+			if (GetOption(FOS.FOS_ALLOWMULTISELECT))
 				return;
-			this._fileNames = new string[1];
+			_fileNames = new string[1];
 			IShellItem ppsi;
 			dialog.GetResult(out ppsi);
-			ppsi.GetDisplayName(SIGDN.SIGDN_FILESYSPATH, out this._fileNames[0]);
+			ppsi.GetDisplayName(SIGDN.SIGDN_FILESYSPATH, out _fileNames[0]);
 		}
 
 		internal virtual void SetDialogProperties(IFileDialog dialog)
 		{
-			// dialog.Advise((IFileDialogEvents) new VistaFileDialogEvents(this), out uint _);
-			if (this._fileNames != null && this._fileNames.Length != 0 && !string.IsNullOrEmpty(this._fileNames[0]))
+			if (_fileNames != null && _fileNames.Length != 0 && !string.IsNullOrEmpty(_fileNames[0]))
 			{
-				string directoryName = Path.GetDirectoryName(this._fileNames[0]);
+				string directoryName = Path.GetDirectoryName(_fileNames[0]);
 				if (directoryName == null || !Directory.Exists(directoryName))
 				{
 					dialog.SetFileName(this._fileNames[0]);
@@ -232,21 +208,15 @@ namespace StandaloneFileBrowser
 				}
 
 				dialog.SetFileTypes((uint)rgFilterSpec.Length, rgFilterSpec);
-				if (this._filterIndex > 0 && _filterIndex <= rgFilterSpec.Length)
+				if (_filterIndex > 0 && _filterIndex <= rgFilterSpec.Length)
 					dialog.SetFileTypeIndex((uint)_filterIndex);
 			}
 
-			if (this._addExtension && !string.IsNullOrEmpty(this._defaultExt))
+			if (_addExtension && !string.IsNullOrEmpty(this._defaultExt))
 				dialog.SetDefaultExtension(_defaultExt);
-			// if (!string.IsNullOrEmpty(this._initialDirectory))
-			// {
-			// 	IShellItem itemFromParsingName = NativeMethods.CreateItemFromParsingName(this._initialDirectory);
-			// 	dialog.SetDefaultFolder(itemFromParsingName);
-			// }
-
 			if (!string.IsNullOrEmpty(_title))
-				dialog.SetTitle(this._title);
-			dialog.SetOptions(this._options | FOS.FOS_FORCEFILESYSTEM);
+				dialog.SetTitle(_title);
+			dialog.SetOptions(_options | FOS.FOS_FORCEFILESYSTEM);
 		}
 
 
@@ -261,7 +231,6 @@ namespace StandaloneFileBrowser
 			_showHelp = false;
 			_title = (string)null;
 			_supportMultiDottedExtensions = false;
-			//CheckPathExists = true;
 		}
 	}
 }

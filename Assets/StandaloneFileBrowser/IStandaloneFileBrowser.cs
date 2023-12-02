@@ -10,7 +10,7 @@ namespace StandaloneFileBrowser
 			Action<string[]> cb);
 
 		string[] OpenFolderPanel(string title);
-		void OpenFolderPanelAsync(string title, Action<string[]> cb);
+		void OpenFolderPanelAsync(string title, Action<string[]> callback);
 
 		string SaveFilePanel(string title, string defaultName, ExtensionFilter[] extensions);
 
