@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using StandaloneFileBrowser;
+using NativeFileBrowsers;
 
 public class BasicSample : MonoBehaviour
 {
@@ -26,14 +26,14 @@ public class BasicSample : MonoBehaviour
 			new ExtensionFilter("PNG ", "png"),
 		};
 
-		var path = StandaloneFileBrowser.StandaloneFileBrowser.OpenFilePanel(title, extensions, true);
+		var path = StandaloneFileBrowser.OpenFilePanel(title, extensions, true);
 	}
 
 	private void SelectFolder()
 	{
 		var title = "Select Folder";
 
-		var path = StandaloneFileBrowser.StandaloneFileBrowser.OpenFolderPanel(title);
+		var path = StandaloneFileBrowser.OpenFolderPanel(title);
 	}
 
 	private void SaveFile()
@@ -44,6 +44,6 @@ public class BasicSample : MonoBehaviour
 			new ExtensionFilter("Binary", "bin"),
 			new ExtensionFilter("Text", "txt"),
 		};
-		var file = StandaloneFileBrowser.StandaloneFileBrowser.SaveFilePanel(title,  "Save file", extensionList);
+		var file = StandaloneFileBrowser.SaveFilePanel(title,  "Save file", extensionList);
 	}
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace StandaloneFileBrowser
+namespace NativeFileBrowsers
 {
-	public interface IStandaloneFileBrowser
+	public interface INativeFileBrowser
 	{
 		string[] OpenFilePanel(string title, ExtensionFilter[] extensions, bool multiselect);
 

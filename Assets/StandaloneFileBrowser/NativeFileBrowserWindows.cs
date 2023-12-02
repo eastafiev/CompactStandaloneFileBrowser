@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 
-namespace StandaloneFileBrowser
+namespace NativeFileBrowsers
 {
-	public class StandaloneFileBrowserWindows : IStandaloneFileBrowser
+	public class NativeFileBrowserWindows : INativeFileBrowser
 	{
 		public string[] OpenFilePanel(string title, ExtensionFilter[] extensions, bool multiselect)
 		{

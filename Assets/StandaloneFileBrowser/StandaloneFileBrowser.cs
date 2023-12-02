@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StandaloneFileBrowser
+namespace NativeFileBrowsers
 {
 	public struct ExtensionFilter
 	{
@@ -16,11 +16,11 @@ namespace StandaloneFileBrowser
 
 	public static class StandaloneFileBrowser
 	{
-		private static readonly StandaloneFileBrowserWindows _standaloneFileBrowser;
+		private static readonly NativeFileBrowserWindows NativeFileBrowser;
 
 		static StandaloneFileBrowser()
 		{
-			_standaloneFileBrowser = new StandaloneFileBrowserWindows();
+			NativeFileBrowser = new NativeFileBrowserWindows();
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace StandaloneFileBrowser
 		public static string[] OpenFilePanel(string title, ExtensionFilter[] extensions,
 			bool multiselect)
 		{
-			return _standaloneFileBrowser.OpenFilePanel(title, extensions, multiselect);
+			return NativeFileBrowser.OpenFilePanel(title, extensions, multiselect);
 		}
 
 		/// <summary>
@@ -43,7 +43,7 @@ namespace StandaloneFileBrowser
 		/// <returns>Returns array of chosen paths. Zero length array when cancelled</returns>
 		public static string[] OpenFolderPanel(string title)
 		{
-			return _standaloneFileBrowser.OpenFolderPanel(title);
+			return NativeFileBrowser.OpenFolderPanel(title);
 		}
 
 		/// <summary>
@@ -53,7 +53,7 @@ namespace StandaloneFileBrowser
 		/// <param name="cb">Callback")</param>
 		public static void OpenFolderPanelAsync(string title, Action<string[]> cb)
 		{
-			_standaloneFileBrowser.OpenFolderPanelAsync(title, cb);
+			NativeFileBrowser.OpenFolderPanelAsync(title, cb);
 		}
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace StandaloneFileBrowser
 		public static string SaveFilePanel(string title, string defaultName,
 			ExtensionFilter[] extensions)
 		{
-			return _standaloneFileBrowser.SaveFilePanel(title, defaultName, extensions);
+			return NativeFileBrowser.SaveFilePanel(title, defaultName, extensions);
 		}
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace StandaloneFileBrowser
 		public static void SaveFilePanelAsync(string title, string defaultName,
 			ExtensionFilter[] extensions, Action<string> cb)
 		{
-			_standaloneFileBrowser.SaveFilePanelAsync(title, defaultName, extensions, cb);
+			NativeFileBrowser.SaveFilePanelAsync(title, defaultName, extensions, cb);
 		}
 	}
 }

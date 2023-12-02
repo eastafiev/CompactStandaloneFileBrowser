@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace StandaloneFileBrowser
+namespace NativeFileBrowsers
 {
 	public sealed class VistaOpenFileDialog : VistaFileDialog
 	{
