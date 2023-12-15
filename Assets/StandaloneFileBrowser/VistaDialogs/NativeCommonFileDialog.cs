@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace NativeFileBrowsers
+namespace NativeFileBrowser
 {
 	[ComImport]
 	[ClassInterface(ClassInterfaceType.None)]

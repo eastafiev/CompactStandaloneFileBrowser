@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NativeFileBrowsers
+namespace NativeFileBrowser
 {
 	public struct ExtensionFilter
 	{

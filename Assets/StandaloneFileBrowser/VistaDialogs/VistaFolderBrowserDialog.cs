@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace NativeFileBrowsers
+namespace NativeFileBrowser
 {
 	public class VistaFolderBrowserDialog : VistaFileDialog
 	{

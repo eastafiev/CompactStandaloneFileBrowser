@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace NativeFileBrowsers
+namespace NativeFileBrowser
 {
 	public class NativeFileBrowserWindows : INativeFileBrowser
 	{

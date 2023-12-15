@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace NativeFileBrowsers
+namespace NativeFileBrowser
 {
 	internal static class IIDGuid
 	{

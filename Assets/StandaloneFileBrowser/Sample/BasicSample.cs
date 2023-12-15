@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using NativeFileBrowsers;
+using NativeFileBrowser;
 
 public class BasicSample : MonoBehaviour
 {
