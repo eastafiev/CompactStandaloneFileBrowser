@@ -1,6 +1,6 @@
 {
     "name": "NativeFileBrowsers",
-    "rootNamespace": "",
+    "rootNamespace": "NativeFileBrowser",
     "references": [],
     "includePlatforms": [
         "Editor",
@@ -8,11 +8,11 @@
         "WindowsStandalone64"
     ],
     "excludePlatforms": [],
-    "allowUnsafeCode": false,
+    "allowUnsafeCode": true,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": false
+    "noEngineReferences": true
 }

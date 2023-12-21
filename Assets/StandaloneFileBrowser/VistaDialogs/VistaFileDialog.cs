@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.InteropServices;
-using UnityEngine;
 
 namespace NativeFileBrowser
 {
@@ -129,7 +128,6 @@ namespace NativeFileBrowser
 		{
 			if (hwndOwner == IntPtr.Zero)
 			{
-				Debug.LogError("VistaFileDialog.cs has no parent window");
 				return false;
 			}
 
