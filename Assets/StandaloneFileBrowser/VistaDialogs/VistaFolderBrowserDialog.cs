@@ -11,17 +11,9 @@ namespace NativeFileBrowser
 
 		#region Public Properties
 
-		/// <summary>
-		/// Gets or sets the folder path selected by the user.
-		/// </summary>
-		/// <value>
-		/// The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string ("").
-		/// </value>
-		[Browsable(true),
-		 Editor(
-			 "System.Windows.Forms.Design.SelectedPathEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
-			 typeof(System.Drawing.Design.UITypeEditor)), Description("The path selected by the user."),
-		 DefaultValue(""), Localizable(true), Category("Folder Browsing")]
+		[Description(
+			"Gets or sets the folder path selected by the user. The path of the folder first selected in the dialog box or the last folder selected by the user. The default is an empty string (\"\").")]
+		[DefaultValue("")]
 		public string SelectedPath
 		{
 			get { return _selectedPath; }

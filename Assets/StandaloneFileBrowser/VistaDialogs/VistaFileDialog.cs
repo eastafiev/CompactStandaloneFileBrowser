@@ -30,7 +30,6 @@ namespace NativeFileBrowser
 		}
 
 		[Description("The file dialog box title.")]
-		[Localizable(true)]
 		public string Title
 		{
 			get { return _title != null ? _title : string.Empty; }
@@ -40,7 +39,6 @@ namespace NativeFileBrowser
 		[Description(
 			"The current file name filter string, which determines the choices that appear in the \"Save as file type\" or \"Files of type\" box in the dialog box.")]
 		[Category("Behavior")]
-		[Localizable(true)]
 		[DefaultValue("")]
 		public string Filter
 		{
