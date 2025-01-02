@@ -3,8 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace NativeFileBrowser
 {
+#if UNITY_EDITOR_64 || PLATFORM_STANDALONE_WIN
 	internal class NativeMethods
 	{
+		
+
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetActiveWindow();
 
@@ -105,4 +108,5 @@ namespace NativeFileBrowser
 		SIATTRIBFLAGS_OR = 0x00000002, // if multiple items or the attributes together.
 		SIATTRIBFLAGS_APPCOMPAT = 0x00000003, // Call GetAttributes directly on the ShellFolder for multiple attributes
 	}
+#endif
 }

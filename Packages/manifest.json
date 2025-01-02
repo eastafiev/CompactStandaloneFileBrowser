@@ -1,9 +1,10 @@
 {
   "dependencies": {
-    "com.unity.ide.rider": "3.0.26",
-    "com.unity.sysroot": "2.0.7",
-    "com.unity.textmeshpro": "3.0.6",
-    "com.unity.ugui": "1.0.0",
+    "com.unity.ide.rider": "3.0.31",
+    "com.unity.multiplayer.center": "1.0.0",
+    "com.unity.sysroot": "2.0.10",
+    "com.unity.ugui": "2.0.0",
+    "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.jsonserialize": "1.0.0",
     "com.unity.modules.unitywebrequest": "1.0.0",
     "com.unity.modules.unitywebrequesttexture": "1.0.0",
