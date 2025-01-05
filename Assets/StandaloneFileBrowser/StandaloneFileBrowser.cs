@@ -17,16 +17,17 @@ namespace NativeFileBrowser
 
     public static class StandaloneFileBrowser
     {
-        private static readonly NativeFileBrowserWindows NativeFileBrowser;
+        //private static readonly NativeFileBrowserWindows NativeFileBrowser;
+        private static readonly INativeFileBrowser NativeFileBrowser;
 
         static StandaloneFileBrowser()
         {
 #if ENABLE_WINMD_SUPPORT
         Debug.LogWarning("uwp support detected");
-    	    NativeFileBrowser = new UwpFilePicker;
-// #elif UNITY_EDITOR || PLATFORM_STANDALONE_WIN
-//             Debug.LogWarning("uwp support detected");
-//             NativeFileBrowser = new NativeFileBrowserWindows();
+    	    NativeFileBrowser = new UwpFilePicker();
+#elif UNITY_EDITOR || PLATFORM_STANDALONE_WIN
+            //Debug.LogWarning("uwp support detected");
+            NativeFileBrowser = new NativeFileBrowserWindows();
 #endif
         }
 

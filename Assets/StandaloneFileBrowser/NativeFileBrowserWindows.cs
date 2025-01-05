@@ -1,3 +1,5 @@
+#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+
 using System;
 using System.IO;
 
@@ -128,3 +130,5 @@ namespace NativeFileBrowser
 		}
 	}
 }
+
+#endif

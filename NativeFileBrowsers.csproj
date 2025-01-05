@@ -48,16 +48,18 @@
   <ItemGroup>
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\NativeMethods.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\StandaloneFileBrowser.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\RnD_UWP\FilePicker.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\Interop.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\NativeFileBrowserWindows.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\NativeCommonFileDialog.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\RnD_UWP\UwpFilePicker.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\VistaOpenFileDialog.cs" />
+    <Compile Include="Assets\StandaloneFileBrowser\RnD_UWP\MonoFilePicker.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\VistaFileDialog.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\VistaSaveFileDialog.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\INativeFileBrowser.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\VistaFolderBrowserDialog.cs" />
     <Compile Include="Assets\StandaloneFileBrowser\Sample\BasicSample.cs" />
-    <Compile Include="Assets\StandaloneFileBrowser\VistaDialogs\UwpFilePicker.cs" />
     <None Include="Assets\StandaloneFileBrowser\package.json" />
     <None Include="Assets\StandaloneFileBrowser\NativeFileBrowsers.asmdef" />
     <Reference Include="UnityEngine">

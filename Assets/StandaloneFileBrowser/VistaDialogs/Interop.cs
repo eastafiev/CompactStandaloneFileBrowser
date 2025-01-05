@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -406,3 +408,5 @@ namespace NativeFileBrowser
 		ERROR_CANCELLED = 0x800704C7
 	}
 }
+
+#endif

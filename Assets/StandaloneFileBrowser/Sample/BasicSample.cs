@@ -4,9 +4,9 @@ using NativeFileBrowser;
 
 public class BasicSample : MonoBehaviour
 {
-	public Button _openFileButton;
-	public Button _openFolderButton;
-	public Button _saveFileButton;
+	[SerializeField] public Button _openFileButton;
+	[SerializeField] public Button _openFolderButton;
+	[SerializeField] public Button _saveFileButton;
 
 
 	private void Awake()

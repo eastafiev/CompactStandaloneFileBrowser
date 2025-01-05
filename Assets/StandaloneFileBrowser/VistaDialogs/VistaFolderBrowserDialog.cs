@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
+
+using System;
 using System.ComponentModel;
 
 namespace NativeFileBrowser
@@ -47,3 +49,4 @@ namespace NativeFileBrowser
 		}
 	}
 }
+#endif

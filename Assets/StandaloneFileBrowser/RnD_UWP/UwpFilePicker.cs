@@ -7,6 +7,7 @@ using Windows.Storage.Pickers;
 using Windows.Foundation;
 using Windows.Storage;
 using UnityEngine;
+using System.Threading.Tasks;
 
 
 namespace NativeFileBrowser
@@ -25,12 +26,16 @@ namespace NativeFileBrowser
                 openPicker.FileTypeFilter.Add(".jpg");
                 openPicker.FileTypeFilter.Add(".jpeg");
                 openPicker.FileTypeFilter.Add(".png");
+                
+                // Open the picker
+                IAsyncOperation<IReadOnlyList<StorageFile>> files = await openPicker.PickMultipleFilesAsync();
+                
                 // Come back to Unity's/Game's main thread
                 UnityEngine.WSA.Application.InvokeOnAppThread(() =>
                 {
                     // Process the computed result, it's safe to interact with all scene objects and Unity API here.
                 }, false);
-            },false);
+            },true);
             //IAsyncOperation<IReadOnlyList<StorageFile>> file =  openPicker.PickMultipleFilesAsync();
             return null;
 
